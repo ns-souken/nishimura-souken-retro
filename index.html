@@ -1,0 +1,639 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title>Nishimura Souken - Think Digital.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        @font-face {
+            font-family: 'VintagePixel';
+            src: url('data:font/truetype;charset=utf-8;base64,') format('truetype');
+        }
+        
+        body {
+            background-color: #C0C0C0;
+            background-image: 
+                radial-gradient(circle at 1px 1px, #808080 1px, transparent 0);
+            background-size: 4px 4px;
+            font-family: "Chicago", "Monaco", monospace;
+            font-size: 9px;
+            margin: 0;
+            padding: 0;
+            color: #000000;
+        }
+        
+        /* モノクロ風カラーパレット */
+        .color-black { color: #000000; }
+        .color-darkgray { color: #404040; }
+        .color-gray { color: #808080; }
+        .color-lightgray { color: #C0C0C0; }
+        .color-white { color: #FFFFFF; }
+        
+        /* 80年代風のテーブルスタイル */
+        table {
+            border-collapse: separate;
+            border-spacing: 1px;
+        }
+        
+        /* 古いMac風3Dボーダー */
+        .mac-window {
+            border: 2px outset #C0C0C0;
+            background-color: #C0C0C0;
+            box-shadow: 2px 2px 0px #404040;
+        }
+        
+        .mac-button {
+            border: 1px outset #C0C0C0;
+            background-color: #E0E0E0;
+            padding: 2px 8px;
+            font-family: "Chicago", Monaco, monospace;
+            font-size: 9px;
+            text-decoration: none;
+            color: #000000;
+            display: inline-block;
+        }
+        
+        .mac-button:hover {
+            background-color: #D0D0D0;
+        }
+        
+        .mac-button:active {
+            border: 1px inset #C0C0C0;
+        }
+        
+        .mac-inset {
+            border: 2px inset #C0C0C0;
+            background-color: #FFFFFF;
+        }
+        
+        /* 古いAppleロゴ（単色版） */
+        .vintage-logo {
+            width: 48px;
+            height: 48px;
+            background-color: #000000;
+            display: inline-block;
+            position: relative;
+            clip-path: polygon(30% 0%, 70% 0%, 85% 20%, 85% 80%, 70% 100%, 30% 100%, 15% 80%, 15% 20%);
+        }
+        
+        .vintage-logo::after {
+            content: "NS";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 16px;
+            font-family: "Chicago", Monaco, monospace;
+        }
+        
+        /* メニューバー風 */
+        .menu-bar {
+            background-color: #FFFFFF;
+            border-bottom: 1px solid #000000;
+            height: 20px;
+            padding: 2px 5px;
+        }
+        
+        .menu-item {
+            font-family: "Chicago", Monaco, monospace;
+            font-size: 9px;
+            color: #000000;
+            text-decoration: none;
+            padding: 0 8px;
+            display: inline-block;
+        }
+        
+        .menu-item:hover {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+        
+        /* ダイアログボックス風 */
+        .dialog-box {
+            border: 2px outset #C0C0C0;
+            background-color: #C0C0C0;
+            padding: 10px;
+            margin: 5px;
+            box-shadow: 2px 2px 0px #404040;
+        }
+        
+        .dialog-title {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 2px 5px;
+            margin: -10px -10px 10px -10px;
+            font-family: "Chicago", Monaco, monospace;
+            font-size: 9px;
+            font-weight: bold;
+        }
+        
+        /* ビットマップ風アイコン */
+        .bitmap-icon {
+            width: 32px;
+            height: 32px;
+            background-color: #000000;
+            display: inline-block;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+        
+        /* ドット絵風フォント効果 */
+        .pixel-text {
+            font-family: "Monaco", "Courier New", monospace;
+            font-size: 8px;
+            letter-spacing: 1px;
+            image-rendering: pixelated;
+        }
+        
+        /* リンクスタイル（昔のブラウザ風） */
+        a {
+            color: #0000EE;
+            text-decoration: underline;
+        }
+        
+        a:visited {
+            color: #551A8B;
+        }
+        
+        a:hover {
+            color: #FF0000;
+        }
+        
+        /* 点滅テキスト */
+        @keyframes blink-slow {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .blink-vintage {
+            animation: blink-slow 2s linear infinite;
+        }
+        
+        /* マーキー風（元のソースから） */
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll-left 15s linear infinite;
+        }
+        
+        /* スクロールバー風装飾 */
+        .scrollbar-decoration {
+            width: 16px;
+            height: 100px;
+            background-color: #C0C0C0;
+            border: 1px inset #C0C0C0;
+            background-image: 
+                linear-gradient(45deg, #808080 25%, transparent 25%),
+                linear-gradient(-45deg, #808080 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #808080 75%),
+                linear-gradient(-45deg, transparent 75%, #808080 75%);
+            background-size: 4px 4px;
+            background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+        }
+        
+        /* タイトルバー */
+        .title-bar {
+            background-color: #C0C0C0;
+            border: 1px outset #C0C0C0;
+            padding: 2px 5px;
+            font-family: "Chicago", Monaco, monospace;
+            font-size: 9px;
+            font-weight: bold;
+        }
+        
+        /* 古いフォームスタイル */
+        .vintage-input {
+            border: 2px inset #C0C0C0;
+            background-color: #FFFFFF;
+            font-family: "Monaco", Courier, monospace;
+            font-size: 9px;
+            padding: 2px;
+        }
+        
+        /* System 6/7風のパターン */
+        .system-pattern {
+            background-image: 
+                linear-gradient(45deg, #C0C0C0 25%, #808080 25%, #808080 50%, #C0C0C0 50%, #C0C0C0 75%, #808080 75%);
+            background-size: 4px 4px;
+        }
+        
+        /* HyperCard風 */
+        .hypercard-button {
+            background-color: #FFFFFF;
+            border: 2px outset #C0C0C0;
+            padding: 4px 12px;
+            font-family: "Chicago", Monaco, monospace;
+            font-size: 9px;
+            text-decoration: none;
+            color: #000000;
+            display: inline-block;
+            box-shadow: 1px 1px 0px #808080;
+        }
+        
+        .hypercard-button:hover {
+            background-color: #F0F0F0;
+        }
+        
+        .hypercard-button:active {
+            border: 2px inset #C0C0C0;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <!-- メインウィンドウ -->
+        <table width="640" cellpadding="0" cellspacing="0" border="0" class="mac-window">
+            <!-- タイトルバー -->
+            <tr>
+                <td class="title-bar" colspan="2">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td>Nishimura Souken Corporate Site v1.0</td>
+                            <td align="right">
+                                <span style="font-family: Chicago, monospace;">□</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <!-- メニューバー -->
+            <tr>
+                <td class="menu-bar" colspan="2">
+                    <a href="#" class="menu-item">File</a>
+                    <a href="#" class="menu-item">Edit</a>
+                    <a href="#services" class="menu-item">Services</a>
+                    <a href="#about" class="menu-item">About</a>
+                    <a href="#contact" class="menu-item">Contact</a>
+                    <a href="#privacy" class="menu-item">Privacy</a>
+                    <span style="float: right; font-family: Chicago, monospace;">⌘</span>
+                </td>
+            </tr>
+            
+            <!-- メインコンテンツエリア -->
+            <tr>
+                <td colspan="2" style="padding: 20px; background-color: #FFFFFF;">
+                    <!-- ヘッダー情報 -->
+                    <table width="100%" cellpadding="10" cellspacing="0" border="0">
+                        <tr>
+                            <td width="60" align="center">
+                                <div class="vintage-logo"></div>
+                            </td>
+                            <td>
+                                <font size="4" face="Chicago, Monaco" class="color-black">
+                                    <b>Nishimura Souken</b>
+                                </font><br>
+                                <font size="1" class="color-darkgray pixel-text">
+                                    Think Digital. Think Different.
+                                </font><br>
+                                <font size="1" class="color-gray">
+                                    Since 1984 (really 2021) • Fukuoka, Japan
+                                </font>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <hr size="1" color="#808080">
+                    
+                    <!-- Welcome Message -->
+                    <div class="dialog-box">
+                        <div class="dialog-title">Welcome to Digital Revolution</div>
+                        <font size="2" face="Chicago, Monaco">
+                            デジタルマーケティングの全領域をカバーする統合ソリューション
+                        </font>
+                        <br><br>
+                        <center>
+                            <a href="#services" class="hypercard-button">View Services</a>
+                            <a href="#contact" class="hypercard-button">Contact Us</a>
+                        </center>
+                    </div>
+                    
+                    <!-- ニュースティッカー -->
+                    <table width="100%" cellpadding="5" cellspacing="0" border="1">
+                        <tr bgcolor="#000000">
+                            <td>
+                                <font color="#00FF00" face="Monaco, Courier" size="1" class="pixel-text">
+                                    <div style="overflow: hidden; white-space: nowrap;">
+                                        <span class="marquee">
+                                            *** NEWS: AI営業支援ツール「AIアポブースト」正規代理店認定 *** 新サービス「SHORT MEDIA」TikTok運用開始 *** 西村総研は創業3年目を迎えました ***
+                                        </span>
+                                    </div>
+                                </font>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <br>
+                    
+                    <!-- サービス一覧 -->
+                    <a name="services"></a>
+                    <div class="dialog-box">
+                        <div class="dialog-title">Service Portfolio - 12 Applications</div>
+                        
+                        <table width="100%" cellpadding="5" cellspacing="2" border="0" bgcolor="#808080">
+                            <tr>
+                                <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">🛒</font><br>
+                                        <font size="1" face="Chicago"><b>EC DESIGN</b></font><br>
+                                        <font size="1" class="color-darkgray">ECサイト制作</font><br>
+                                        <font size="1" class="color-darkgray">売上向上を重視したUI/UX設計</font>
+                                    </center>
+                                </td>
+                                <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">📊</font><br>
+                                        <font size="1" face="Chicago"><b>LP DESIGN</b></font><br>
+                                        <font size="1" class="color-darkgray">LP制作</font><br>
+                                        <font size="1" class="color-darkgray">高CV率を実現するLP設計</font>
+                                    </center>
+                                </td>
+                                <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">🖥️</font><br>
+                                        <font size="1" face="Chicago"><b>WEB CRAFT</b></font><br>
+                                        <font size="1" class="color-darkgray">Webサイト制作</font><br>
+                                        <font size="1" class="color-darkgray">ブランド価値を高めるサイト</font>
+                                    </center>
+                                </td>
+                                <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">⚙️</font><br>
+                                        <font size="1" face="Chicago"><b>SYSTEM DEV</b></font><br>
+                                        <font size="1" class="color-darkgray">システム開発</font><br>
+                                        <font size="1" class="color-darkgray">業務効率化・DX推進</font>
+                                    </center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">📱</font><br>
+                                        <font size="1" face="Chicago"><b>SNS BOOST</b></font><br>
+                                        <font size="1" class="color-darkgray">SNSプロモーション</font><br>
+                                        <font size="1" class="color-darkgray">認知・エンゲージメント最大化</font>
+                                    </center>
+                                </td>
+                                <td bgcolor="#FFFFFF" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">📺</font><br>
+                                        <font size="1" face="Chicago"><b>YT GROWTH</b></font><br>
+                                        <font size="1" class="color-darkgray">YouTube運用</font><br>
+                                        <font size="1" class="color-darkgray">チャンネル設計から分析改善</font>
+                                    </center>
+                                </td>
+                                <td bgcolor="#FFFFFF" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">🎬</font><br>
+                                        <font size="1" face="Chicago"><b>SHORT MEDIA</b></font><br>
+                                        <font size="1" class="color-darkgray">TikTok/Instagram運用</font><br>
+                                        <font size="1" class="color-darkgray">ショート動画でバズを創出</font>
+                                    </center>
+                                </td>
+                                <td bgcolor="#FFFFFF" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">🎯</font><br>
+                                        <font size="1" face="Chicago"><b>CASTING HUB</b></font><br>
+                                        <font size="1" class="color-darkgray">インフルエンサー</font><br>
+                                        <font size="1" class="color-darkgray">最適なマッチングを実現</font>
+                                    </center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">🎥</font><br>
+                                        <font size="1" face="Chicago"><b>VIDEO PROD</b></font><br>
+                                        <font size="1" class="color-darkgray">映像制作</font><br>
+                                        <font size="1" class="color-darkgray">企業VP・商品PR動画</font>
+                                    </center>
+                                </td>
+                                <td bgcolor="#FFFFFF" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">📸</font><br>
+                                        <font size="1" face="Chicago"><b>PHOTO SHOOT</b></font><br>
+                                        <font size="1" class="color-darkgray">スチール撮影</font><br>
+                                        <font size="1" class="color-darkgray">商品・EC向け高品質撮影</font>
+                                    </center>
+                                </td>
+                                <td bgcolor="#FFFFFF" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">🎨</font><br>
+                                        <font size="1" face="Chicago"><b>GRAPHIC DESIGN</b></font><br>
+                                        <font size="1" class="color-darkgray">グラフィックデザイン</font><br>
+                                        <font size="1" class="color-darkgray">ブランドアイデンティティ</font>
+                                    </center>
+                                </td>
+                                <td bgcolor="#FFFFFF" class="mac-inset">
+                                    <center>
+                                        <font size="4" style="filter: contrast(100%) brightness(0%)">📈</font><br>
+                                        <font size="1" face="Chicago"><b>ADS MANAGE</b></font><br>
+                                        <font size="1" class="color-darkgray">広告運用代理</font><br>
+                                        <font size="1" class="color-darkgray">費用対効果の最大化</font>
+                                    </center>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <br>
+                    
+                    <!-- About -->
+                    <a name="about"></a>
+                    <div class="dialog-box">
+                        <div class="dialog-title">About This Company</div>
+                        <font size="2" face="Chicago, Monaco">
+                            <b>Philosophy:</b><br>
+                            各分野の専門チームがワンストップでアプローチ。<br>
+                            統合的なマーケティングソリューションを提供します。<br><br>
+                            
+                            <b>Company Info:</b><br>
+                            • Founded: 2021<br>
+                            • Location: Fukuoka, Japan<br>
+                            • Services: 12 Digital Solutions<br>
+                            • Status: Active & Growing
+                        </font>
+                    </div>
+                    
+                    <!-- Partners -->
+                    <div class="dialog-box">
+                        <div class="dialog-title">Strategic Partnerships</div>
+                        <table width="100%" cellpadding="10" cellspacing="0" border="0">
+                            <tr>
+                                <td bgcolor="#FFFFFF" class="mac-inset" align="center">
+                                    <font size="2" face="Chicago"><b>AIアポブースト</b></font><br>
+                                    <font size="1" class="color-darkgray">正規代理店認定</font><br><br>
+                                    <a href="https://ns-souken.com" class="hypercard-button">Visit Site</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Contact -->
+                    <a name="contact"></a>
+                    <div class="dialog-box">
+                        <div class="dialog-title">Contact Information</div>
+                        <font size="2" face="Chicago, Monaco">
+                            <b>西村総研</b><br>
+                            福岡県久留米市<br><br>
+                            Email: info@nishimura-souken.com<br><br>
+                        </font>
+                        <center>
+                            <a href="mailto:info@nishimura-souken.com" class="hypercard-button">Send Message</a>
+                        </center>
+                    </div>
+                    
+                    <!-- Privacy Policy -->
+                    <a name="privacy"></a>
+                    <div class="dialog-box">
+                        <div class="dialog-title">Privacy Policy v1.0 - System Documentation</div>
+                        
+                        <!-- BASIC風プログラムリスト風表示 -->
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
+                            <tr>
+                                <td style="padding: 10px;">
+                                    <font color="#00FF00" face="Monaco, Courier" size="1" class="pixel-text">
+                                        10 REM *** NISHIMURA SOUKEN PRIVACY POLICY ***<br>
+                                        20 REM COPYRIGHT (C) 2024 NISHIMURA LABS<br>
+                                        30 REM SYSTEM REQUIREMENTS: 48K RAM MINIMUM<br>
+                                        40 REM<br>
+                                        50 PRINT "INITIALIZING PRIVACY PROTOCOL..."<br>
+                                        60 PRINT "LOADING DATA PROTECTION ROUTINES..."<br>
+                                        70 REM<br>
+                                        80 REM === DATA COLLECTION MODULE ===<br>
+                                        90 PRINT "1. 個人情報の収集について"<br>
+                                        100 PRINT "   当社では以下の情報を収集します："<br>
+                                        110 PRINT "   - お名前、メールアドレス"<br>
+                                        120 PRINT "   - お問い合わせ内容"<br>
+                                        130 PRINT "   - Webサイトアクセスログ"<br>
+                                        140 REM<br>
+                                        150 REM === DATA USAGE MODULE ===<br>
+                                        160 PRINT "2. 個人情報の利用目的"<br>
+                                        170 PRINT "   - サービス提供およびサポート"<br>
+                                        180 PRINT "   - お問い合わせへの回答"<br>
+                                        190 PRINT "   - サービス向上のための分析"<br>
+                                        200 REM<br>
+                                        210 REM === SECURITY PROTOCOL ===<br>
+                                        220 PRINT "3. セキュリティ対策"<br>
+                                        230 PRINT "   - 適切な技術的措置を実施"<br>
+                                        240 PRINT "   - 不正アクセス防止システム稼働中"<br>
+                                        250 PRINT "   - 定期的なセキュリティ監査実施"<br>
+                                        260 REM<br>
+                                        270 REM === THIRD PARTY MODULE ===<br>
+                                        280 PRINT "4. 第三者提供について"<br>
+                                        290 PRINT "   - 法令に基づく場合を除き提供しません"<br>
+                                        300 PRINT "   - 事前同意なしに第三者提供は行いません"<br>
+                                        310 REM<br>
+                                        320 REM === COOKIE HANDLER ===<br>
+                                        330 PRINT "5. Cookieの使用"<br>
+                                        340 PRINT "   - サイト改善のため使用"<br>
+                                        350 PRINT "   - ブラウザ設定で無効化可能"<br>
+                                        360 REM<br>
+                                        370 REM === CONTACT SUBROUTINE ===<br>
+                                        380 PRINT "6. お問い合わせ窓口"<br>
+                                        390 PRINT "   西村総研"<br>
+                                        400 PRINT "   Email: info@nishimura-souken.com"<br>
+                                        410 REM<br>
+                                        420 PRINT "PRIVACY PROTOCOL LOADED SUCCESSFULLY"<br>
+                                        430 PRINT "READY"<br>
+                                        440 PRINT "> "<span class="blink-vintage">_</span><br>
+                                        450 END
+                                    </font>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <br>
+                        
+                        <!-- システム情報風 -->
+                        <table width="100%" cellpadding="5" cellspacing="0" border="1" bgcolor="#C0C0C0">
+                            <tr>
+                                <td class="mac-inset">
+                                    <font size="1" face="Monaco, Courier" class="pixel-text color-black">
+                                        System Info: PRIVACY.SYS v1.0<br>
+                                        Last Modified: 2024/01/01<br>
+                                        File Size: 2.1K bytes<br>
+                                        Checksum: OK<br>
+                                        Status: ACTIVE
+                                    </font>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <br>
+                        
+                        <!-- HyperCard風確認ボタン -->
+                        <center>
+                            <a href="#" class="hypercard-button" onclick="alert('Privacy Policy Acknowledged - Thank You!')">Acknowledge Policy</a>
+                            <a href="#" class="hypercard-button">Print Policy</a>
+                        </center>
+                    </div>
+                    
+                </td>
+            </tr>
+            
+            <!-- ステータスバー -->
+            <tr>
+                <td class="title-bar" style="border-top: 1px solid #808080;">
+                    <font size="1" face="Monaco, Courier" class="pixel-text">
+                        Ready • 12 services loaded • Memory: 128K free
+                    </font>
+                </td>
+                <td align="right" class="title-bar" style="border-top: 1px solid #808080; width: 200px;">
+                    <font size="1" face="Monaco, Courier" class="pixel-text">
+                        Visitors: 0000042 <span class="blink-vintage">_</span>
+                    </font>
+                </td>
+            </tr>
+        </table>
+        
+        <br>
+        
+        <!-- システム情報 -->
+        <table cellpadding="3" cellspacing="0" border="1" bgcolor="#000000">
+            <tr>
+                <td>
+                    <font color="#C0C0C0" face="Monaco, Courier" size="1" class="pixel-text">
+                        System 6.0.7 Compatible • Requires 1MB RAM • HyperCard Stack
+                    </font>
+                </td>
+            </tr>
+        </table>
+        
+        <br>
+        
+        <!-- Webリング風ナビゲーション -->
+        <table cellpadding="5" cellspacing="0" border="0">
+            <tr>
+                <td>
+                    <a href="#" class="hypercard-button">&lt; Previous</a>
+                </td>
+                <td>
+                    <font size="1" class="color-darkgray pixel-text">[ Classic Mac Software Ring ]</font>
+                </td>
+                <td>
+                    <a href="#" class="hypercard-button">Next &gt;</a>
+                </td>
+            </tr>
+        </table>
+        
+        <br>
+        
+        <!-- HyperCard風リンク -->
+        <font size="1" class="color-darkgray pixel-text">
+            This stack created with HyperCard • System 6.0.7+ Compatible<br>
+            Best viewed on Macintosh Plus (1MB RAM) or later • 800x600 resolution
+        </font>
+        
+    </center>
+</body>
+</html>
