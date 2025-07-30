@@ -324,8 +324,8 @@
                     <table width="100%" cellpadding="10" cellspacing="0" border="0">
                         <tr>
                             <td width="60" align="center">
-                                <img src="assets/images/logo.svg" class="company-logo" alt="西村総研" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-                                <div class="vintage-logo" style="display: none;"></div>
+                                <img src="assets/images/logo.svg" class="company-logo" alt="西村総研" style="cursor: pointer;" onclick="startInvaders()" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                                <div class="vintage-logo" style="display: none; cursor: pointer;" onclick="startInvaders()"></div>
                             </td>
                             <td>
                                 <font size="4" face="Chicago, Monaco" class="color-black">
@@ -590,5 +590,183 @@
         </font>
         
     </center>
+    
+    <!-- 超軽量インベーダーゲーム -->
+    <div id="invaders-game" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999;">
+        <canvas id="gameCanvas" style="display: block; margin: 0 auto; image-rendering: pixelated;"></canvas>
+        <div style="position: absolute; top: 10px; left: 10px; color: #0F0; font-family: Monaco, monospace; font-size: 16px;">
+            SCORE: <span id="score">0</span>
+        </div>
+        <div style="position: absolute; top: 10px; right: 10px; color: #0F0; font-family: Monaco, monospace; font-size: 16px;">
+            LIVES: <span id="lives">3</span>
+        </div>
+        <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); color: #0F0; font-family: Monaco, monospace; font-size: 12px;">
+            ARROW KEYS: MOVE • SPACE: FIRE • ESC: EXIT
+        </div>
+    </div>
+    
+    <script>
+    // 超軽量インベーダーゲーム
+    function startInvaders() {
+        const gameDiv = document.getElementById('invaders-game');
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreEl = document.getElementById('score');
+        const livesEl = document.getElementById('lives');
+        
+        // ゲーム設定
+        canvas.width = 320;
+        canvas.height = 240;
+        gameDiv.style.display = 'block';
+        
+        let player = {x: 160, y: 210, w: 20, h: 10};
+        let bullets = [];
+        let invaders = [];
+        let invaderBullets = [];
+        let score = 0;
+        let lives = 3;
+        let keys = {};
+        let gameRunning = true;
+        
+        // インベーダー初期化
+        for(let row = 0; row < 4; row++) {
+            for(let col = 0; col < 8; col++) {
+                invaders.push({
+                    x: col * 35 + 30,
+                    y: row * 25 + 30,
+                    w: 20,
+                    h: 15,
+                    alive: true
+                });
+            }
+        }
+        
+        // キー入力
+        document.addEventListener('keydown', (e) => {
+            keys[e.key] = true;
+            if(e.key === 'Escape') endGame();
+        });
+        document.addEventListener('keyup', (e) => keys[e.key] = false);
+        
+        // ゲームループ
+        let invaderDir = 1;
+        let lastShot = 0;
+        
+        function gameLoop() {
+            if(!gameRunning) return;
+            
+            // クリア
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // プレイヤー移動
+            if(keys['ArrowLeft'] && player.x > 10) player.x -= 3;
+            if(keys['ArrowRight'] && player.x < 310) player.x += 3;
+            if(keys[' '] && Date.now() - lastShot > 300) {
+                bullets.push({x: player.x, y: player.y, w: 2, h: 8});
+                lastShot = Date.now();
+            }
+            
+            // インベーダー移動
+            let shouldDrop = false;
+            for(let inv of invaders) {
+                if(!inv.alive) continue;
+                if(inv.x <= 10 || inv.x >= 290) shouldDrop = true;
+            }
+            
+            if(shouldDrop) {
+                invaderDir *= -1;
+                invaders.forEach(inv => inv.y += 20);
+            }
+            
+            invaders.forEach(inv => {
+                if(inv.alive) inv.x += invaderDir * 0.5;
+            });
+            
+            // インベーダー弾
+            if(Math.random() < 0.01) {
+                let aliveInvaders = invaders.filter(i => i.alive);
+                if(aliveInvaders.length > 0) {
+                    let shooter = aliveInvaders[Math.floor(Math.random() * aliveInvaders.length)];
+                    invaderBullets.push({x: shooter.x + 10, y: shooter.y + 15, w: 2, h: 6});
+                }
+            }
+            
+            // 弾移動
+            bullets = bullets.filter(b => {
+                b.y -= 5;
+                return b.y > 0;
+            });
+            
+            invaderBullets = invaderBullets.filter(b => {
+                b.y += 3;
+                if(b.x > player.x - 10 && b.x < player.x + 10 && b.y > player.y - 5) {
+                    lives--;
+                    livesEl.textContent = lives;
+                    if(lives <= 0) endGame();
+                    return false;
+                }
+                return b.y < canvas.height;
+            });
+            
+            // 衝突判定
+            bullets = bullets.filter(bullet => {
+                for(let inv of invaders) {
+                    if(inv.alive && bullet.x > inv.x && bullet.x < inv.x + inv.w && 
+                       bullet.y > inv.y && bullet.y < inv.y + inv.h) {
+                        inv.alive = false;
+                        score += 10;
+                        scoreEl.textContent = score;
+                        return false;
+                    }
+                }
+                return true;
+            });
+            
+            // 描画
+            ctx.fillStyle = '#0F0';
+            
+            // プレイヤー
+            ctx.fillRect(player.x - 10, player.y, 20, 5);
+            ctx.fillRect(player.x - 5, player.y - 5, 10, 5);
+            ctx.fillRect(player.x - 2, player.y - 8, 4, 3);
+            
+            // インベーダー
+            invaders.forEach(inv => {
+                if(inv.alive) {
+                    // シンプルなインベーダー形状
+                    ctx.fillRect(inv.x + 2, inv.y, 16, 5);
+                    ctx.fillRect(inv.x, inv.y + 5, 20, 5);
+                    ctx.fillRect(inv.x + 2, inv.y + 10, 4, 5);
+                    ctx.fillRect(inv.x + 14, inv.y + 10, 4, 5);
+                }
+            });
+            
+            // 弾
+            bullets.forEach(b => ctx.fillRect(b.x, b.y, b.w, b.h));
+            invaderBullets.forEach(b => ctx.fillRect(b.x, b.y, b.w, b.h));
+            
+            // 勝利判定
+            if(invaders.every(i => !i.alive)) {
+                ctx.fillStyle = '#0F0';
+                ctx.font = '20px Monaco';
+                ctx.fillText('YOU WIN!', 120, 120);
+                setTimeout(endGame, 2000);
+                return;
+            }
+            
+            requestAnimationFrame(gameLoop);
+        }
+        
+        function endGame() {
+            gameRunning = false;
+            gameDiv.style.display = 'none';
+            document.removeEventListener('keydown', arguments.callee);
+            document.removeEventListener('keyup', arguments.callee);
+        }
+        
+        gameLoop();
+    }
+    </script>
 </body>
 </html>
