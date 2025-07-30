@@ -3,6 +3,7 @@
 <head>
     <title>Nishimura Souken - Think Digital.</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Favicon and Web App Icons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -286,6 +287,176 @@
             border: 2px inset #C0C0C0;
             box-shadow: none;
         }
+        
+        /* モバイル対応 - 完璧なレトロデザイン維持 */
+        @media screen and (max-width: 680px) {
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 10px;
+            }
+            
+            center {
+                padding: 3px;
+            }
+            
+            .mac-window {
+                width: 100% !important;
+                max-width: 100vw;
+                margin: 0;
+                border-width: 1px;
+            }
+            
+            /* タイトルバー調整 */
+            .title-bar {
+                font-size: 8px;
+                padding: 2px 4px;
+                height: 16px;
+            }
+            
+            /* メニューバー調整 */
+            .menu-bar {
+                font-size: 8px;
+                padding: 2px 4px;
+                height: 18px;
+            }
+            
+            .menu-item {
+                font-size: 8px;
+                padding: 0 4px;
+            }
+            
+            /* コンテンツエリア */
+            .content-padding {
+                padding: 8px !important;
+            }
+            
+            /* ヘッダー情報 */
+            .company-logo {
+                width: 40px !important;
+                height: 40px !important;
+            }
+            
+            .vintage-logo {
+                width: 40px !important;
+                height: 40px !important;
+            }
+            
+            .company-name {
+                font-size: 16px !important;
+            }
+            
+            .company-tagline {
+                font-size: 8px !important;
+            }
+            
+            /* ダイアログボックス */
+            .dialog-box {
+                padding: 6px;
+                margin: 3px 0;
+            }
+            
+            .dialog-title {
+                font-size: 8px;
+                padding: 2px 4px;
+                margin: -6px -6px 6px -6px;
+            }
+            
+            /* サービス一覧を1列表示 */
+            .service-table {
+                display: block !important;
+                width: 100% !important;
+                background: #808080 !important;
+                padding: 2px !important;
+            }
+            
+            .service-row-mobile {
+                display: block !important;
+            }
+            
+            .service-row-mobile td {
+                display: block !important;
+                width: 100% !important;
+                margin-bottom: 2px !important;
+                padding: 8px !important;
+                background-color: #FFFFFF !important;
+                border: 2px inset #C0C0C0 !important;
+            }
+            
+            .service-row-mobile td:last-child {
+                margin-bottom: 0 !important;
+            }
+            
+            /* サービスアイコンとテキスト調整 */
+            .service-icon {
+                font-size: 20px !important;
+                display: block;
+                margin-bottom: 4px;
+            }
+            
+            .service-title {
+                font-size: 10px !important;
+                font-weight: bold;
+                display: block;
+                margin-bottom: 2px;
+            }
+            
+            .service-desc {
+                font-size: 8px !important;
+                line-height: 1.2;
+            }
+            
+            /* ボタン調整 */
+            .hypercard-button {
+                padding: 4px 8px;
+                font-size: 8px;
+                margin: 2px 1px;
+                border-width: 1px;
+            }
+            
+            /* ニュースティッカー */
+            .news-ticker {
+                font-size: 6px !important;
+            }
+            
+            /* マーキー調整 */
+            .marquee {
+                animation-duration: 20s !important;
+            }
+            
+            /* ステータスバー */
+            .status-left, .status-right {
+                font-size: 6px !important;
+                padding: 1px 3px !important;
+            }
+            
+            /* パートナーシップセクション */
+            .partner-content {
+                font-size: 9px !important;
+            }
+            
+            /* コンタクトセクション */
+            .contact-content {
+                font-size: 9px !important;
+            }
+            
+            /* Aboutセクション */
+            .about-content {
+                font-size: 8px !important;
+                line-height: 1.3;
+            }
+            
+            /* 下部システム情報 */
+            .system-info {
+                font-size: 6px !important;
+                padding: 2px !important;
+            }
+            
+            .footer-info {
+                font-size: 6px !important;
+                line-height: 1.2;
+            }
+        }
     </style>
 </head>
 <body>
@@ -320,19 +491,19 @@
             
             <!-- メインコンテンツエリア -->
             <tr>
-                <td colspan="2" style="padding: 20px; background-color: #FFFFFF;">
+                <td colspan="2" style="padding: 20px; background-color: #FFFFFF;" class="content-padding">
                     <!-- ヘッダー情報 -->
                     <table width="100%" cellpadding="10" cellspacing="0" border="0">
                         <tr>
                             <td width="60" align="center">
-                                <img src="assets/images/logo.svg" class="company-logo" alt="西村総研" style="cursor: pointer;" onclick="startInvaders()" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-                                <div class="vintage-logo" style="display: none; cursor: pointer;" onclick="startInvaders()"></div>
+                                <img src="assets/images/logo.svg" class="company-logo" alt="西村総研" style="cursor: pointer;" onclick="startBreakout()" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                                <div class="vintage-logo" style="display: none; cursor: pointer;" onclick="startBreakout()"></div>
                             </td>
                             <td>
-                                <font size="4" face="KH-Dot-Hibiya, Chicago, Monaco" class="color-black">
+                                <font size="4" face="KH-Dot-Hibiya, Chicago, Monaco" class="color-black company-name">
                                     <b>Nishimura Souken</b>
                                 </font><br>
-                                <font size="1" class="color-darkgray pixel-text">
+                                <font size="1" class="color-darkgray pixel-text company-tagline">
                                     Think Digital. Think Different.
                                 </font><br>
                                 <font size="1" class="color-gray">
@@ -361,7 +532,7 @@
                     <table width="100%" cellpadding="5" cellspacing="0" border="1">
                         <tr bgcolor="#000000">
                             <td>
-                                <font color="#00FF00" face="Monaco, Courier" size="1" class="pixel-text">
+                                <font color="#00FF00" face="KH-Dot-Hibiya, Monaco, Courier" size="1" class="pixel-text">
                                     <div style="overflow: hidden; white-space: nowrap;">
                                         <span class="marquee">
                                             *** NEWS: AI営業支援ツール「AIアポブースト」正規代理店認定 *** 新サービス「SHORT MEDIA」TikTok運用開始 *** 西村総研は創業3年目を迎えました ***
@@ -379,106 +550,106 @@
                     <div class="dialog-box">
                         <div class="dialog-title">Service Portfolio - 12 Applications</div>
                         
-                        <table width="100%" cellpadding="5" cellspacing="2" border="0" bgcolor="#808080">
-                            <tr>
+                        <table width="100%" cellpadding="5" cellspacing="2" border="0" bgcolor="#808080" class="service-table">
+                            <tr class="service-row-mobile">
                                 <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
                                     <center>
-                                        <font size="4">🛒</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>EC DESIGN</b></font><br>
-                                        <font size="1" class="color-darkgray">ECサイト制作</font><br>
-                                        <font size="1" class="color-darkgray">売上向上を重視したUI/UX設計</font>
+                                        <font size="4" class="service-icon">🛒</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>EC DESIGN</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">ECサイト制作</font><br>
+                                        <font size="1" class="color-darkgray service-desc">売上向上を重視したUI/UX設計</font>
                                     </center>
                                 </td>
                                 <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
                                     <center>
-                                        <font size="4">📊</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>LP DESIGN</b></font><br>
-                                        <font size="1" class="color-darkgray">LP制作</font><br>
-                                        <font size="1" class="color-darkgray">高CV率を実現するLP設計</font>
+                                        <font size="4" class="service-icon">📊</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>LP DESIGN</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">LP制作</font><br>
+                                        <font size="1" class="color-darkgray service-desc">高CV率を実現するLP設計</font>
                                     </center>
                                 </td>
                                 <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
                                     <center>
-                                        <font size="4">🖥️</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>WEB CRAFT</b></font><br>
-                                        <font size="1" class="color-darkgray">Webサイト制作</font><br>
-                                        <font size="1" class="color-darkgray">ブランド価値を高めるサイト</font>
+                                        <font size="4" class="service-icon">🖥️</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>WEB CRAFT</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">Webサイト制作</font><br>
+                                        <font size="1" class="color-darkgray service-desc">ブランド価値を高めるサイト</font>
                                     </center>
                                 </td>
                                 <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
                                     <center>
-                                        <font size="4">⚙️</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>SYSTEM DEV</b></font><br>
-                                        <font size="1" class="color-darkgray">システム開発</font><br>
-                                        <font size="1" class="color-darkgray">業務効率化・DX推進</font>
+                                        <font size="4" class="service-icon">⚙️</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>SYSTEM DEV</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">システム開発</font><br>
+                                        <font size="1" class="color-darkgray service-desc">業務効率化・DX推進</font>
                                     </center>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="service-row-mobile">
                                 <td bgcolor="#FFFFFF" class="mac-inset">
                                     <center>
-                                        <font size="4">📱</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>SNS BOOST</b></font><br>
-                                        <font size="1" class="color-darkgray">SNSプロモーション</font><br>
-                                        <font size="1" class="color-darkgray">認知・エンゲージメント最大化</font>
+                                        <font size="4" class="service-icon">📱</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>SNS BOOST</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">SNSプロモーション</font><br>
+                                        <font size="1" class="color-darkgray service-desc">認知・エンゲージメント最大化</font>
                                     </center>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
                                     <center>
-                                        <font size="4">📺</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>YT GROWTH</b></font><br>
-                                        <font size="1" class="color-darkgray">YouTube運用</font><br>
-                                        <font size="1" class="color-darkgray">チャンネル設計から分析改善</font>
+                                        <font size="4" class="service-icon">📺</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>YT GROWTH</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">YouTube運用</font><br>
+                                        <font size="1" class="color-darkgray service-desc">チャンネル設計から分析改善</font>
                                     </center>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
                                     <center>
-                                        <font size="4">🎬</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>SHORT MEDIA</b></font><br>
-                                        <font size="1" class="color-darkgray">TikTok/Instagram運用</font><br>
-                                        <font size="1" class="color-darkgray">ショート動画でバズを創出</font>
+                                        <font size="4" class="service-icon">🎬</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>SHORT MEDIA</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">TikTok/Instagram運用</font><br>
+                                        <font size="1" class="color-darkgray service-desc">ショート動画でバズを創出</font>
                                     </center>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
                                     <center>
-                                        <font size="4">🎯</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>CASTING HUB</b></font><br>
-                                        <font size="1" class="color-darkgray">インフルエンサー</font><br>
-                                        <font size="1" class="color-darkgray">最適なマッチングを実現</font>
+                                        <font size="4" class="service-icon">🎯</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>CASTING HUB</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">インフルエンサー</font><br>
+                                        <font size="1" class="color-darkgray service-desc">最適なマッチングを実現</font>
                                     </center>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="service-row-mobile">
                                 <td bgcolor="#FFFFFF" class="mac-inset">
                                     <center>
-                                        <font size="4">🎥</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>VIDEO PROD</b></font><br>
-                                        <font size="1" class="color-darkgray">映像制作</font><br>
-                                        <font size="1" class="color-darkgray">企業VP・商品PR動画</font>
+                                        <font size="4" class="service-icon">🎥</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>VIDEO PROD</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">映像制作</font><br>
+                                        <font size="1" class="color-darkgray service-desc">企業VP・商品PR動画</font>
                                     </center>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
                                     <center>
-                                        <font size="4">📸</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>PHOTO SHOOT</b></font><br>
-                                        <font size="1" class="color-darkgray">スチール撮影</font><br>
-                                        <font size="1" class="color-darkgray">商品・EC向け高品質撮影</font>
+                                        <font size="4" class="service-icon">📸</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>PHOTO SHOOT</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">スチール撮影</font><br>
+                                        <font size="1" class="color-darkgray service-desc">商品・EC向け高品質撮影</font>
                                     </center>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
                                     <center>
-                                        <font size="4">🎨</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>GRAPHIC DESIGN</b></font><br>
-                                        <font size="1" class="color-darkgray">グラフィックデザイン</font><br>
-                                        <font size="1" class="color-darkgray">ブランドアイデンティティ</font>
+                                        <font size="4" class="service-icon">🎨</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>GRAPHIC DESIGN</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">グラフィックデザイン</font><br>
+                                        <font size="1" class="color-darkgray service-desc">ブランドアイデンティティ</font>
                                     </center>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
                                     <center>
-                                        <font size="4">📈</font><br>
-                                        <font size="1" face="KH-Dot-Hibiya, Chicago"><b>ADS MANAGE</b></font><br>
-                                        <font size="1" class="color-darkgray">広告運用代理</font><br>
-                                        <font size="1" class="color-darkgray">費用対効果の最大化</font>
+                                        <font size="4" class="service-icon">📈</font><br>
+                                        <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>ADS MANAGE</b></font><br>
+                                        <font size="1" class="color-darkgray service-desc">広告運用代理</font><br>
+                                        <font size="1" class="color-darkgray service-desc">費用対効果の最大化</font>
                                     </center>
                                 </td>
                             </tr>
@@ -491,7 +662,7 @@
                     <a name="about"></a>
                     <div class="dialog-box">
                         <div class="dialog-title">About This Company</div>
-                        <font size="2" face="KH-Dot-Hibiya, Chicago, Monaco">
+                        <font size="2" face="KH-Dot-Hibiya, Chicago, Monaco" class="about-content">
                             <b>Philosophy:</b><br>
                             各分野の専門チームがワンストップでアプローチ。<br>
                             統合的なマーケティングソリューションを提供します。<br><br>
@@ -508,10 +679,10 @@
                     <div class="dialog-box">
                         <div class="dialog-title">Strategic Partnerships</div>
                         <table width="100%" cellpadding="10" cellspacing="0" border="0">
-                            <tr>
+                            <tr class="service-row-mobile">
                                 <td bgcolor="#FFFFFF" class="mac-inset" align="center">
-                                    <font size="2" face="Chicago"><b>AIアポブースト</b></font><br>
-                                    <font size="1" class="color-darkgray">正規代理店認定</font><br><br>
+                                    <font size="2" face="KH-Dot-Hibiya, Chicago" class="partner-content"><b>AIアポブースト</b></font><br>
+                                    <font size="1" class="color-darkgray partner-content">正規代理店認定</font><br><br>
                                     <a href="https://ns-souken.com" class="hypercard-button">Visit Site</a>
                                 </td>
                             </tr>
@@ -522,7 +693,7 @@
                     <a name="contact"></a>
                     <div class="dialog-box">
                         <div class="dialog-title">Contact Information</div>
-                        <font size="2" face="KH-Dot-Hibiya, Chicago, Monaco">
+                        <font size="2" face="KH-Dot-Hibiya, Chicago, Monaco" class="contact-content">
                             <b>西村総研</b><br>
                             福岡県久留米市<br><br>
                             Email: kaito.nishimura@ns-souken.com<br><br>
@@ -538,12 +709,12 @@
             
             <!-- ステータスバー -->
             <tr>
-                <td class="title-bar" style="border-top: 1px solid #808080;">
+                <td class="title-bar status-left" style="border-top: 1px solid #808080;">
                     <font size="1" face="Monaco, Courier" class="pixel-text">
                         Ready • 12 services loaded • Memory: 128K free
                     </font>
                 </td>
-                <td align="right" class="title-bar" style="border-top: 1px solid #808080; width: 200px;">
+                <td align="right" class="title-bar status-right" style="border-top: 1px solid #808080; width: 200px;">
                     <font size="1" face="Monaco, Courier" class="pixel-text">
                         Visitors: 0000042 <span class="blink-vintage">_</span>
                     </font>
@@ -554,7 +725,7 @@
         <br>
         
         <!-- システム情報 -->
-        <table cellpadding="3" cellspacing="0" border="1" bgcolor="#000000">
+        <table cellpadding="3" cellspacing="0" border="1" bgcolor="#000000" class="system-info">
             <tr>
                 <td>
                     <font color="#C0C0C0" face="Monaco, Courier" size="1" class="pixel-text">
@@ -584,7 +755,7 @@
         <br>
         
         <!-- HyperCard風リンク -->
-        <font size="1" class="color-darkgray pixel-text">
+        <font size="1" class="color-darkgray pixel-text footer-info">
             This stack created with HyperCard • System 6.0.7+ Compatible<br>
             Best viewed on Macintosh Plus (1MB RAM) or later • 800x600 resolution<br><br>
             <a href="privacy.html" style="color: #666666; text-decoration: underline;">Privacy Policy</a>
@@ -592,180 +763,258 @@
         
     </center>
     
-    <!-- 超軽量インベーダーゲーム -->
-    <div id="invaders-game" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999;">
-        <canvas id="gameCanvas" style="display: block; margin: 0 auto; image-rendering: pixelated;"></canvas>
+    <!-- 超軽量ブロック崩しゲーム -->
+    <div id="breakout-game" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999;">
+        <canvas id="gameCanvas" style="display: block; margin: 0 auto; image-rendering: pixelated; max-width: 100%; max-height: 100%;"></canvas>
         <div style="position: absolute; top: 10px; left: 10px; color: #0F0; font-family: Monaco, monospace; font-size: 16px;">
             SCORE: <span id="score">0</span>
         </div>
         <div style="position: absolute; top: 10px; right: 10px; color: #0F0; font-family: Monaco, monospace; font-size: 16px;">
             LIVES: <span id="lives">3</span>
         </div>
-        <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); color: #0F0; font-family: Monaco, monospace; font-size: 12px;">
-            ARROW KEYS: MOVE • SPACE: FIRE • ESC: EXIT
+        <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); color: #0F0; font-family: Monaco, monospace; font-size: 12px; text-align: center;">
+            PC: ARROW KEYS or MOUSE • ESC: EXIT<br>
+            MOBILE: TOUCH TO MOVE PADDLE
         </div>
     </div>
     
     <script>
-    // 超軽量インベーダーゲーム
-    function startInvaders() {
-        const gameDiv = document.getElementById('invaders-game');
+    // 超軽量ブロック崩しゲーム
+    function startBreakout() {
+        const gameDiv = document.getElementById('breakout-game');
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         const scoreEl = document.getElementById('score');
         const livesEl = document.getElementById('lives');
         
-        // ゲーム設定
-        canvas.width = 320;
-        canvas.height = 240;
+        // ゲーム設定 - レスポンシブサイズ
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const screenW = window.innerWidth;
+        const screenH = window.innerHeight;
+        
+        if (isMobile) {
+            // モバイル: 画面サイズに合わせて拡大
+            const scale = Math.min(screenW / 320, screenH / 240) * 0.9;
+            canvas.width = 320;
+            canvas.height = 240;
+            canvas.style.width = (320 * scale) + 'px';
+            canvas.style.height = (240 * scale) + 'px';
+            canvas.style.marginTop = ((screenH - 240 * scale) / 2) + 'px';
+        } else {
+            // PC: 元のサイズ
+            canvas.width = 320;
+            canvas.height = 240;
+            canvas.style.width = '320px';
+            canvas.style.height = '240px';
+            canvas.style.marginTop = ((screenH - 240) / 2) + 'px';
+        }
+        
         gameDiv.style.display = 'block';
         
-        let player = {x: 160, y: 210, w: 20, h: 10};
-        let bullets = [];
-        let invaders = [];
-        let invaderBullets = [];
+        // ゲーム要素
+        let paddle = {x: 140, y: 220, w: 40, h: 6, speed: 4};
+        let ball = {x: 160, y: 200, dx: 2, dy: -2, r: 3};
+        let blocks = [];
         let score = 0;
         let lives = 3;
         let keys = {};
         let gameRunning = true;
+        let mouseX = 160;
+        let touchX = 160;
         
-        // インベーダー初期化
-        for(let row = 0; row < 4; row++) {
+        // ブロック初期化 (8x5)
+        for(let row = 0; row < 5; row++) {
             for(let col = 0; col < 8; col++) {
-                invaders.push({
-                    x: col * 35 + 30,
-                    y: row * 25 + 30,
-                    w: 20,
-                    h: 15,
-                    alive: true
+                blocks.push({
+                    x: col * 38 + 10,
+                    y: row * 12 + 30,
+                    w: 36,
+                    h: 10,
+                    alive: true,
+                    color: ['#FF0000', '#FF8800', '#FFFF00', '#00FF00', '#0088FF'][row]
                 });
             }
         }
         
-        // キー入力
-        document.addEventListener('keydown', (e) => {
+        // キーボード制御
+        const keydownHandler = (e) => {
             keys[e.key] = true;
             if(e.key === 'Escape') endGame();
-        });
-        document.addEventListener('keyup', (e) => keys[e.key] = false);
+        };
+        const keyupHandler = (e) => keys[e.key] = false;
+        
+        document.addEventListener('keydown', keydownHandler);
+        document.addEventListener('keyup', keyupHandler);
+        
+        // マウス制御
+        const mouseMoveHandler = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouseX = (e.clientX - rect.left) * (canvas.width / rect.width);
+        };
+        canvas.addEventListener('mousemove', mouseMoveHandler);
+        
+        // タッチ制御（モバイル対応）
+        const touchMoveHandler = (e) => {
+            e.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            touchX = (touch.clientX - rect.left) * (canvas.width / rect.width);
+        };
+        
+        const touchStartHandler = (e) => {
+            e.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            touchX = (touch.clientX - rect.left) * (canvas.width / rect.width);
+        };
+        
+        canvas.addEventListener('touchmove', touchMoveHandler, {passive: false});
+        canvas.addEventListener('touchstart', touchStartHandler, {passive: false});
+        
+        // 衝突判定
+        function ballBlockCollision(ball, block) {
+            const dx = ball.x - Math.max(block.x, Math.min(ball.x, block.x + block.w));
+            const dy = ball.y - Math.max(block.y, Math.min(ball.y, block.y + block.h));
+            return (dx * dx + dy * dy) < (ball.r * ball.r);
+        }
+        
+        function ballPaddleCollision(ball, paddle) {
+            return ball.x + ball.r > paddle.x && 
+                   ball.x - ball.r < paddle.x + paddle.w &&
+                   ball.y + ball.r > paddle.y &&
+                   ball.y - ball.r < paddle.y + paddle.h;
+        }
         
         // ゲームループ
-        let invaderDir = 1;
-        let lastShot = 0;
-        
         function gameLoop() {
             if(!gameRunning) return;
             
-            // クリア
+            // 画面クリア
             ctx.fillStyle = '#000';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
-            // プレイヤー移動
-            if(keys['ArrowLeft'] && player.x > 10) player.x -= 3;
-            if(keys['ArrowRight'] && player.x < 310) player.x += 3;
-            if(keys[' '] && Date.now() - lastShot > 300) {
-                bullets.push({x: player.x, y: player.y, w: 2, h: 8});
-                lastShot = Date.now();
+            // パドル制御
+            if(keys['ArrowLeft'] && paddle.x > 0) {
+                paddle.x -= paddle.speed;
+            }
+            if(keys['ArrowRight'] && paddle.x < canvas.width - paddle.w) {
+                paddle.x += paddle.speed;
             }
             
-            // インベーダー移動
-            let shouldDrop = false;
-            for(let inv of invaders) {
-                if(!inv.alive) continue;
-                if(inv.x <= 10 || inv.x >= 290) shouldDrop = true;
+            // マウス/タッチ制御
+            if(mouseX !== 160 || touchX !== 160) {
+                const targetX = touchX !== 160 ? touchX : mouseX;
+                paddle.x = targetX - paddle.w / 2;
+                paddle.x = Math.max(0, Math.min(canvas.width - paddle.w, paddle.x));
             }
             
-            if(shouldDrop) {
-                invaderDir *= -1;
-                invaders.forEach(inv => inv.y += 20);
+            // ボール移動
+            ball.x += ball.dx;
+            ball.y += ball.dy;
+            
+            // 壁との衝突
+            if(ball.x - ball.r <= 0 || ball.x + ball.r >= canvas.width) {
+                ball.dx = -ball.dx;
+            }
+            if(ball.y - ball.r <= 0) {
+                ball.dy = -ball.dy;
             }
             
-            invaders.forEach(inv => {
-                if(inv.alive) inv.x += invaderDir * 0.5;
-            });
+            // パドルとの衝突
+            if(ballPaddleCollision(ball, paddle)) {
+                ball.dy = -Math.abs(ball.dy);
+                // パドルの位置に応じて角度調整
+                const hitPos = (ball.x - paddle.x) / paddle.w;
+                ball.dx = (hitPos - 0.5) * 4;
+            }
             
-            // インベーダー弾
-            if(Math.random() < 0.01) {
-                let aliveInvaders = invaders.filter(i => i.alive);
-                if(aliveInvaders.length > 0) {
-                    let shooter = aliveInvaders[Math.floor(Math.random() * aliveInvaders.length)];
-                    invaderBullets.push({x: shooter.x + 10, y: shooter.y + 15, w: 2, h: 6});
+            // ブロックとの衝突
+            for(let block of blocks) {
+                if(block.alive && ballBlockCollision(ball, block)) {
+                    block.alive = false;
+                    ball.dy = -ball.dy;
+                    score += 10;
+                    scoreEl.textContent = score;
+                    break;
                 }
             }
             
-            // 弾移動
-            bullets = bullets.filter(b => {
-                b.y -= 5;
-                return b.y > 0;
-            });
-            
-            invaderBullets = invaderBullets.filter(b => {
-                b.y += 3;
-                if(b.x > player.x - 10 && b.x < player.x + 10 && b.y > player.y - 5) {
-                    lives--;
-                    livesEl.textContent = lives;
-                    if(lives <= 0) endGame();
-                    return false;
+            // ボールが下に落ちた
+            if(ball.y > canvas.height) {
+                lives--;
+                livesEl.textContent = lives;
+                if(lives <= 0) {
+                    gameOver();
+                    return;
                 }
-                return b.y < canvas.height;
-            });
-            
-            // 衝突判定
-            bullets = bullets.filter(bullet => {
-                for(let inv of invaders) {
-                    if(inv.alive && bullet.x > inv.x && bullet.x < inv.x + inv.w && 
-                       bullet.y > inv.y && bullet.y < inv.y + inv.h) {
-                        inv.alive = false;
-                        score += 10;
-                        scoreEl.textContent = score;
-                        return false;
-                    }
-                }
-                return true;
-            });
+                // ボールリセット
+                ball.x = 160;
+                ball.y = 200;
+                ball.dx = 2;
+                ball.dy = -2;
+            }
             
             // 描画
             ctx.fillStyle = '#0F0';
             
-            // プレイヤー
-            ctx.fillRect(player.x - 10, player.y, 20, 5);
-            ctx.fillRect(player.x - 5, player.y - 5, 10, 5);
-            ctx.fillRect(player.x - 2, player.y - 8, 4, 3);
+            // パドル
+            ctx.fillRect(paddle.x, paddle.y, paddle.w, paddle.h);
             
-            // インベーダー
-            invaders.forEach(inv => {
-                if(inv.alive) {
-                    // シンプルなインベーダー形状
-                    ctx.fillRect(inv.x + 2, inv.y, 16, 5);
-                    ctx.fillRect(inv.x, inv.y + 5, 20, 5);
-                    ctx.fillRect(inv.x + 2, inv.y + 10, 4, 5);
-                    ctx.fillRect(inv.x + 14, inv.y + 10, 4, 5);
+            // ボール
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // ブロック
+            blocks.forEach(block => {
+                if(block.alive) {
+                    ctx.fillStyle = block.color;
+                    ctx.fillRect(block.x, block.y, block.w, block.h);
+                    ctx.fillStyle = '#000';
+                    ctx.fillRect(block.x + 1, block.y + 1, block.w - 2, block.h - 2);
+                    ctx.fillStyle = block.color;
+                    ctx.fillRect(block.x + 2, block.y + 2, block.w - 4, block.h - 4);
                 }
             });
             
-            // 弾
-            bullets.forEach(b => ctx.fillRect(b.x, b.y, b.w, b.h));
-            invaderBullets.forEach(b => ctx.fillRect(b.x, b.y, b.w, b.h));
-            
-            // 勝利判定
-            if(invaders.every(i => !i.alive)) {
-                ctx.fillStyle = '#0F0';
-                ctx.font = '20px Monaco';
-                ctx.fillText('YOU WIN!', 120, 120);
-                setTimeout(endGame, 2000);
+            // クリア判定
+            if(blocks.every(b => !b.alive)) {
+                victory();
                 return;
             }
             
             requestAnimationFrame(gameLoop);
         }
         
+        function gameOver() {
+            ctx.fillStyle = '#F00';
+            ctx.font = '20px Monaco';
+            ctx.fillText('GAME OVER', 100, 120);
+            setTimeout(endGame, 2000);
+        }
+        
+        function victory() {
+            ctx.fillStyle = '#0F0';
+            ctx.font = '20px Monaco';
+            ctx.fillText('YOU WIN!', 110, 120);
+            setTimeout(endGame, 2000);
+        }
+        
         function endGame() {
             gameRunning = false;
             gameDiv.style.display = 'none';
-            document.removeEventListener('keydown', arguments.callee);
-            document.removeEventListener('keyup', arguments.callee);
+            
+            // イベントリスナー削除
+            document.removeEventListener('keydown', keydownHandler);
+            document.removeEventListener('keyup', keyupHandler);
+            canvas.removeEventListener('mousemove', mouseMoveHandler);
+            canvas.removeEventListener('touchmove', touchMoveHandler);
+            canvas.removeEventListener('touchstart', touchStartHandler);
         }
         
+        // ゲーム開始表示
+        scoreEl.textContent = score;
+        livesEl.textContent = lives;
         gameLoop();
     }
     </script>
