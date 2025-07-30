@@ -3,7 +3,7 @@
 <head>
     <title>Nishimura Souken - Think Digital.</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=800, initial-scale=1.0">
     
     <!-- Favicon and Web App Icons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -288,175 +288,6 @@
             box-shadow: none;
         }
         
-        /* モバイル対応 - 完璧なレトロデザイン維持 */
-        @media screen and (max-width: 680px) {
-            body {
-                margin: 0;
-                padding: 0;
-                font-size: 10px;
-            }
-            
-            center {
-                padding: 3px;
-            }
-            
-            .mac-window {
-                width: 100% !important;
-                max-width: 100vw;
-                margin: 0;
-                border-width: 1px;
-            }
-            
-            /* タイトルバー調整 */
-            .title-bar {
-                font-size: 8px;
-                padding: 2px 4px;
-                height: 16px;
-            }
-            
-            /* メニューバー調整 */
-            .menu-bar {
-                font-size: 8px;
-                padding: 2px 4px;
-                height: 18px;
-            }
-            
-            .menu-item {
-                font-size: 8px;
-                padding: 0 4px;
-            }
-            
-            /* コンテンツエリア */
-            .content-padding {
-                padding: 8px !important;
-            }
-            
-            /* ヘッダー情報 */
-            .company-logo {
-                width: 40px !important;
-                height: 40px !important;
-            }
-            
-            .vintage-logo {
-                width: 40px !important;
-                height: 40px !important;
-            }
-            
-            .company-name {
-                font-size: 16px !important;
-            }
-            
-            .company-tagline {
-                font-size: 8px !important;
-            }
-            
-            /* ダイアログボックス */
-            .dialog-box {
-                padding: 6px;
-                margin: 3px 0;
-            }
-            
-            .dialog-title {
-                font-size: 8px;
-                padding: 2px 4px;
-                margin: -6px -6px 6px -6px;
-            }
-            
-            /* サービス一覧を1列表示 */
-            .service-table {
-                display: block !important;
-                width: 100% !important;
-                background: #808080 !important;
-                padding: 2px !important;
-            }
-            
-            .service-row-mobile {
-                display: block !important;
-            }
-            
-            .service-row-mobile td {
-                display: block !important;
-                width: 100% !important;
-                margin-bottom: 2px !important;
-                padding: 8px !important;
-                background-color: #FFFFFF !important;
-                border: 2px inset #C0C0C0 !important;
-            }
-            
-            .service-row-mobile td:last-child {
-                margin-bottom: 0 !important;
-            }
-            
-            /* サービスアイコンとテキスト調整 */
-            .service-icon {
-                font-size: 20px !important;
-                display: block;
-                margin-bottom: 4px;
-            }
-            
-            .service-title {
-                font-size: 10px !important;
-                font-weight: bold;
-                display: block;
-                margin-bottom: 2px;
-            }
-            
-            .service-desc {
-                font-size: 8px !important;
-                line-height: 1.2;
-            }
-            
-            /* ボタン調整 */
-            .hypercard-button {
-                padding: 4px 8px;
-                font-size: 8px;
-                margin: 2px 1px;
-                border-width: 1px;
-            }
-            
-            /* ニュースティッカー */
-            .news-ticker {
-                font-size: 6px !important;
-            }
-            
-            /* マーキー調整 */
-            .marquee {
-                animation-duration: 20s !important;
-            }
-            
-            /* ステータスバー */
-            .status-left, .status-right {
-                font-size: 6px !important;
-                padding: 1px 3px !important;
-            }
-            
-            /* パートナーシップセクション */
-            .partner-content {
-                font-size: 9px !important;
-            }
-            
-            /* コンタクトセクション */
-            .contact-content {
-                font-size: 9px !important;
-            }
-            
-            /* Aboutセクション */
-            .about-content {
-                font-size: 8px !important;
-                line-height: 1.3;
-            }
-            
-            /* 下部システム情報 */
-            .system-info {
-                font-size: 6px !important;
-                padding: 2px !important;
-            }
-            
-            .footer-info {
-                font-size: 6px !important;
-                line-height: 1.2;
-            }
-        }
     </style>
 </head>
 <body>
@@ -518,7 +349,7 @@
                     <!-- Welcome Message -->
                     <div class="dialog-box">
                         <div class="dialog-title">Welcome to Digital Revolution</div>
-                        <font size="2" face="KH-Dot-Hibiya, Chicago, Monaco">
+                        <font size="2" face="KH-Dot-Hibiya, Chicago, Monaco" class="welcome-message">
                             デジタルマーケティングの全領域をカバーする統合ソリューション
                         </font>
                         <br><br>
@@ -529,6 +360,7 @@
                     </div>
                     
                     <!-- ニュースティッカー -->
+                    <div class="news-section">
                     <table width="100%" cellpadding="5" cellspacing="0" border="1">
                         <tr bgcolor="#000000">
                             <td>
@@ -542,6 +374,7 @@
                             </td>
                         </tr>
                     </table>
+                    </div>
                     
                     <br>
                     
@@ -553,104 +386,104 @@
                         <table width="100%" cellpadding="5" cellspacing="2" border="0" bgcolor="#808080" class="service-table">
                             <tr class="service-row-mobile">
                                 <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">🛒</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>EC DESIGN</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">ECサイト制作</font><br>
                                         <font size="1" class="color-darkgray service-desc">売上向上を重視したUI/UX設計</font>
-                                    </center>
+                                    </div>
                                 </td>
                                 <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">📊</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>LP DESIGN</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">LP制作</font><br>
                                         <font size="1" class="color-darkgray service-desc">高CV率を実現するLP設計</font>
-                                    </center>
+                                    </div>
                                 </td>
                                 <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">🖥️</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>WEB CRAFT</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">Webサイト制作</font><br>
                                         <font size="1" class="color-darkgray service-desc">ブランド価値を高めるサイト</font>
-                                    </center>
+                                    </div>
                                 </td>
                                 <td bgcolor="#FFFFFF" width="25%" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">⚙️</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>SYSTEM DEV</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">システム開発</font><br>
                                         <font size="1" class="color-darkgray service-desc">業務効率化・DX推進</font>
-                                    </center>
+                                    </div>
                                 </td>
                             </tr>
                             <tr class="service-row-mobile">
                                 <td bgcolor="#FFFFFF" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">📱</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>SNS BOOST</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">SNSプロモーション</font><br>
                                         <font size="1" class="color-darkgray service-desc">認知・エンゲージメント最大化</font>
-                                    </center>
+                                    </div>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">📺</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>YT GROWTH</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">YouTube運用</font><br>
                                         <font size="1" class="color-darkgray service-desc">チャンネル設計から分析改善</font>
-                                    </center>
+                                    </div>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">🎬</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>SHORT MEDIA</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">TikTok/Instagram運用</font><br>
                                         <font size="1" class="color-darkgray service-desc">ショート動画でバズを創出</font>
-                                    </center>
+                                    </div>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">🎯</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>CASTING HUB</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">インフルエンサー</font><br>
                                         <font size="1" class="color-darkgray service-desc">最適なマッチングを実現</font>
-                                    </center>
+                                    </div>
                                 </td>
                             </tr>
                             <tr class="service-row-mobile">
                                 <td bgcolor="#FFFFFF" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">🎥</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>VIDEO PROD</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">映像制作</font><br>
                                         <font size="1" class="color-darkgray service-desc">企業VP・商品PR動画</font>
-                                    </center>
+                                    </div>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">📸</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>PHOTO SHOOT</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">スチール撮影</font><br>
                                         <font size="1" class="color-darkgray service-desc">商品・EC向け高品質撮影</font>
-                                    </center>
+                                    </div>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">🎨</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>GRAPHIC DESIGN</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">グラフィックデザイン</font><br>
                                         <font size="1" class="color-darkgray service-desc">ブランドアイデンティティ</font>
-                                    </center>
+                                    </div>
                                 </td>
                                 <td bgcolor="#FFFFFF" class="mac-inset">
-                                    <center>
+                                    <div class="service-card-content">
                                         <font size="4" class="service-icon">📈</font><br>
                                         <font size="1" face="KH-Dot-Hibiya, Chicago" class="service-title"><b>ADS MANAGE</b></font><br>
                                         <font size="1" class="color-darkgray service-desc">広告運用代理</font><br>
                                         <font size="1" class="color-darkgray service-desc">費用対効果の最大化</font>
-                                    </center>
+                                    </div>
                                 </td>
                             </tr>
                         </table>
@@ -738,6 +571,7 @@
         <br>
         
         <!-- Webリング風ナビゲーション -->
+        <div class="webring-nav">
         <table cellpadding="5" cellspacing="0" border="0">
             <tr>
                 <td>
@@ -751,6 +585,7 @@
                 </td>
             </tr>
         </table>
+        </div>
         
         <br>
         
