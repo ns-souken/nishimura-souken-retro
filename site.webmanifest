@@ -1,0 +1,23 @@
+{
+    "name": "Nishimura Souken - Think Digital",
+    "short_name": "西村総研",
+    "description": "80年代Mac風デジタルマーケティング会社のコーポレートサイト",
+    "icons": [
+        {
+            "src": "assets/images/logo.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ],
+    "theme_color": "#C0C0C0",
+    "background_color": "#C0C0C0",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
+}
