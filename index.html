@@ -65,10 +65,21 @@
             background-color: #FFFFFF;
         }
         
-        /* 古いAppleロゴ（単色版） */
+        /* SVGロゴスタイル */
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            display: inline-block;
+            filter: contrast(1.1) brightness(0.95);
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+        
+        /* フォールバック用ヴィンテージロゴ */
         .vintage-logo {
-            width: 48px;
-            height: 48px;
+            width: 60px;
+            height: 60px;
             background-color: #000000;
             display: inline-block;
             position: relative;
@@ -83,7 +94,7 @@
             transform: translate(-50%, -50%);
             color: #FFFFFF;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 24px;
             font-family: "Chicago", Monaco, monospace;
         }
         
@@ -287,7 +298,8 @@
                     <table width="100%" cellpadding="10" cellspacing="0" border="0">
                         <tr>
                             <td width="60" align="center">
-                                <div class="vintage-logo"></div>
+                                <img src="assets/images/logo.svg" class="company-logo" alt="西村総研" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                                <div class="vintage-logo" style="display: none;"></div>
                             </td>
                             <td>
                                 <font size="4" face="Chicago, Monaco" class="color-black">
