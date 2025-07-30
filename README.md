@@ -81,7 +81,7 @@ Simply open `index.html` in any modern browser to experience the retro interface
 
 **Nishimura Souken**  
 Fukuoka, Japan  
-Email: info@nishimura-souken.com
+Email: kaito.nishimura@ns-souken.com
 
 ---
 
