@@ -26,13 +26,7 @@ jobs:
     
     - name: Deploy to Firebase Hosting (Live)
       if: github.ref == 'refs/heads/main'
-      run: |
-        echo "Testing if secret exists..."
-        if [ -z "${{ secrets.FIREBASE_TOKEN }}" ]; then
-          echo "Error: FIREBASE_TOKEN secret is not set"
-          exit 1
-        fi
-        firebase deploy --only hosting --token "${{ secrets.FIREBASE_TOKEN }}"
+      run: firebase deploy --only hosting --token "${{ secrets.FIREBASE_TOKEN }}"
     
     - name: Deploy Preview Channel
       if: github.event_name == 'pull_request'
