@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "nishimura-souken",
     "public": ".",
     "ignore": [
       "firebase.json",
