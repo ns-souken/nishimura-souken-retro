@@ -3,10 +3,11 @@
   "@type": "Organization",
   "name": "西村総研",
   "alternateName": "Nishimura Souken",
-  "description": "デジタルマーケティング専門会社。ECサイト制作、SNS運用、YouTube・TikTok運用、MEO対策など幅広いサービスを提供。",
+  "description": "AI時代のデジタルマーケティング専門会社。ChatGPT・Claude活用による営業効率化、ECサイト制作、SNS運用、YouTube・TikTok運用、MEO対策など幅広いサービスを提供。",
   "url": "https://nishimura-souken.web.app",
   "logo": "https://nishimura-souken.web.app/assets/images/logo.svg",
   "foundingDate": "2021",
+  "slogan": "Think Digital. Think Different.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "久留米市",
@@ -16,16 +17,64 @@
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "kaito.nishimura@ns-souken.com",
-    "contactType": "customer service"
+    "contactType": "customer service",
+    "availableLanguage": ["ja", "en"]
   },
   "sameAs": [],
+  "knowsAbout": [
+    "ChatGPT",
+    "Claude",
+    "AI営業効率化",
+    "AIマーケティング",
+    "営業自動化",
+    "AIアポブースト",
+    "デジタルマーケティング",
+    "ECサイト制作",
+    "SNS運用",
+    "YouTube運用",
+    "TikTok運用",
+    "MEO対策"
+  ],
+  "expertise": [
+    "人工知能マーケティング",
+    "営業プロセス自動化",
+    "デジタルトランスフォーメーション",
+    "ソーシャルメディアマーケティング",
+    "検索エンジン最適化",
+    "コンテンツマーケティング"
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Japan"
+  },
+  "serviceType": "デジタルマーケティング",
   "offers": [
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
+        "name": "AI営業支援ツール導入",
+        "description": "AIアポブースト正規代理店として、ChatGPTやClaudeを活用した営業効率化を実現",
+        "category": "AI営業効率化",
+        "serviceType": "営業支援",
+        "provider": {
+          "@type": "Organization",
+          "name": "西村総研"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
         "name": "デジタルマーケティング",
-        "description": "総合的なデジタルマーケティング戦略の立案と実行"
+        "description": "AI時代に対応したマーケティング戦略立案と実行",
+        "category": "マーケティング",
+        "serviceType": "デジタルマーケティング",
+        "provider": {
+          "@type": "Organization",
+          "name": "西村総研"
+        }
       }
     },
     {
@@ -33,7 +82,13 @@
       "itemOffered": {
         "@type": "Service",
         "name": "ECサイト制作",
-        "description": "売れるECサイトの構築と運用支援"
+        "description": "売れるECサイトの構築と運用支援。ChatGPT活用による商品説明自動生成",
+        "category": "ウェブ開発",
+        "serviceType": "ECサイト制作",
+        "provider": {
+          "@type": "Organization",
+          "name": "西村総研"
+        }
       }
     },
     {
@@ -41,7 +96,55 @@
       "itemOffered": {
         "@type": "Service",
         "name": "SNS運用代行",
-        "description": "効果的なSNSマーケティング戦略の実施"
+        "description": "効果的なSNSマーケティング戦略の実施。AI自動投稿、ChatGPT/Claude活用によるコンテンツ生成",
+        "category": "SNSマーケティング",
+        "serviceType": "SNS運用",
+        "provider": {
+          "@type": "Organization",
+          "name": "西村総研"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "YouTube運用",
+        "description": "動画マーケティング戦略。AI分析によるコンテンツ最適化、ChatGPT活用による台本作成支援",
+        "category": "動画マーケティング",
+        "serviceType": "YouTube運用",
+        "provider": {
+          "@type": "Organization",
+          "name": "西村総研"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "TikTok運用",
+        "description": "バズるコンテンツ制作。AI分析によるトレンド予測、最適投稿時間の自動判定",
+        "category": "ショート動画マーケティング",
+        "serviceType": "TikTok運用",
+        "provider": {
+          "@type": "Organization",
+          "name": "西村総研"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "MEO対策",
+        "description": "Googleマップ最適化。AI分析による競合調査、自動レビュー管理システム",
+        "category": "ローカルSEO",
+        "serviceType": "MEO対策",
+        "provider": {
+          "@type": "Organization",
+          "name": "西村総研"
+        }
       }
     }
   ]
